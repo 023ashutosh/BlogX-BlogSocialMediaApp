@@ -35,6 +35,17 @@
     background-color: var(--btn);
     color: var(--text);
   }
+
+  .contactButton{
+    padding: 20px;
+    min-width: 120px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bgSoft);
+    color: var(--text);
+    align-items: center;
+    text-align: center;
+  }
   
   .brands{
     width: 500px;
