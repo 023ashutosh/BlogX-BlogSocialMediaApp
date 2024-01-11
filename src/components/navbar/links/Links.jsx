@@ -29,7 +29,7 @@ const Links = ({}) => {
 
   // TEMPORARY
   const session = true;
-  const isAdmin = true;
+  const isAdmin = false;
 
   return (
     <div className={styles.container}>
