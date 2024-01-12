@@ -1,19 +1,18 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css";
-import PostUser from "@/components/postUser/postUser";
-// import { getPost } from "@/lib/data";
+import { getPost } from "@/lib/data";
 import { Suspense } from "react";
 
-const getData = async (slug) => {
-  const blogUrl = `https://jsonplaceholder.typicode.com/posts/${slug}`;
-  const res = await fetch(blogUrl);
+// const getData = async (slug) => {
+//   const blogUrl = `https://jsonplaceholder.typicode.com/posts/${slug}`;
+//   const res = await fetch(blogUrl);
 
-  if (!res.ok) {
-    throw new error("Something went wrong.");
-  }
+//   if (!res.ok) {
+//     throw new error("Something went wrong.");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 const currentDate = new Date();
 const formattedDate = `${(currentDate.getMonth() + 1)
@@ -25,21 +24,21 @@ const formattedDate = `${(currentDate.getMonth() + 1)
 
 const SinglePostPage = async ({ params }) => {
   const { slug } = params;
-  const post = await getData(slug);
-  // const post = await getPost(slug);
+  // const post = await getData(slug);
+  const post = await getPost(slug);
 
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+          src={post.img}
           alt=""
           fill
         />
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>
-          {post.title.slice(0, 30)}
+          {post.title}
         </h1>
         <div className={styles.detail}>
           <Image

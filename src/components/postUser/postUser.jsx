@@ -1,21 +1,21 @@
-import styles from "./postUser.module.css";
-// import { getUser } from "@/lib/data";
+// import styles from "./postUser.module.css";
+// // import { getUser } from "@/lib/data";
 
-const getData = async (userId) => {
-    const blogUrl = `https://jsonplaceholder.typicode.com/users/${userId}`;
-    const res = await fetch(blogUrl, {cache:"no-store"});
+// const getData = async (userId) => {
+//     const blogUrl = `https://jsonplaceholder.typicode.com/users/${userId}`;
+//     const res = await fetch(blogUrl, {cache:"no-store"});
   
-    if (!res.ok) {
-      throw new error("Something went wrong.");
-    }
+//     if (!res.ok) {
+//       throw new error("Something went wrong.");
+//     }
   
-    return res.json();
-  };
+//     return res.json();
+//   };
 
 const PostUser = async ({userId}) => {
 
-    const user = await getData(userId);
-    // const user = await getUser(userId);
+    // const user = await getData(userId);
+    const user = await getUser(userId);
 
   return (
     <div className={styles.container}>
