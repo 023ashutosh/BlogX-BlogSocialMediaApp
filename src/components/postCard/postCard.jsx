@@ -2,15 +2,18 @@ import Image from "next/image";
 import styles from "./postCard.module.css";
 import Link from "next/link";
 
-const currentDate = new Date();
-const formattedDate = `${(currentDate.getMonth() + 1)
-  .toString()
-  .padStart(2, "0")}.${currentDate
-  .getDate()
-  .toString()
-  .padStart(2, "0")}.${currentDate.getFullYear()}`;
+function formatDate(inputDate) {
+  const date = new Date(inputDate);
+  const day = date.getDate();
+  const month = date.toLocaleString('en-us', { month: 'short' });
+  const year = date.getFullYear().toString().slice(-2);
+  return `${day}${month}'${year}`;
+}
+
 
 const PostCard = ({ post }) => {
+
+  console.log(post.createdAt?.toString())
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -18,7 +21,7 @@ const PostCard = ({ post }) => {
           <div className={styles.imgContainer}>
             <Image src={post.img} alt="" fill className={styles.img} />
           </div>)}
-        <span className={styles.date}>{formattedDate}</span>
+        <span className={styles.date}>{formatDate(post.createdAt)}</span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
