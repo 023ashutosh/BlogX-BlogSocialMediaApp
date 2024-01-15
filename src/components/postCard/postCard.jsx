@@ -13,7 +13,6 @@ function formatDate(inputDate) {
 
 const PostCard = ({ post }) => {
 
-  console.log(post.createdAt?.toString())
   return (
     <div className={styles.container}>
       <div className={styles.top}>
