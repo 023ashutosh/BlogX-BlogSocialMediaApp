@@ -13,8 +13,8 @@ export const handleLogout = async () => {
   await signOut();
 };
 
-export const register = async () => {
-  const { username, email, password, passwordRepeat, img } = formData;
+export const register = async (formData) => {
+  const { username, email, password, passwordRepeat, img } = Object.fromEntries(formData);
 
   if (password !== passwordRepeat) {
     return "Passwords do not match.";
