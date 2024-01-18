@@ -2,7 +2,7 @@
 
 import styles from "./registerForm.module.css";
 import { useFormState } from "react-dom";
-import { login, register } from "@/lib/action";
+import { register } from "@/lib/action";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
