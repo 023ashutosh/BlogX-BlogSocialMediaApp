@@ -14,7 +14,6 @@ const Home = () => {
         </p>
         <div className={styles.buttons}>
           <button className={styles.button}>Learn More</button>
-          {/* <button className={styles.button}>Contact</button> */}
           <Link className={styles.contactButton} href="/contact">Contact</Link>
         </div>
         <div className={styles.brands}>

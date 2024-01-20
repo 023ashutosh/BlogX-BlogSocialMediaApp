@@ -14,7 +14,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (state?.success) {
-      router.push("/login");
+      router.push("/");
     }
   }, [state?.success]);
 
