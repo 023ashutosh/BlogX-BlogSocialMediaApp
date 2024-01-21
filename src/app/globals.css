@@ -1,10 +1,19 @@
-:root {
+/* :root {
   --bg: #0d0c22;
   --bgSoft: #2d2b42;
   --text: white;
   --textSoft: #e5e5e5;
   --btn: #3673fd;
+} */
+
+:root {
+  --bg: #0d0c22;      /* Background color */
+  --bgSoft: #2d2b42;  /* Softer background color */
+  --text: #ffffff;    /* Text color */
+  --textSoft: #b0b0b0;/* Softer text color */
+  --btn: #00bfff;     /* Button color */
 }
+
 
 * {
   margin: 0;
