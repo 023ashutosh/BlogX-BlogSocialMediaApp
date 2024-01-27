@@ -6,6 +6,7 @@ import { connectToDb } from "./utils";
 import bcrypt from "bcryptjs";
 import { authConfig } from "./auth.config";
 
+
 const login = async (credentials) => {
   try {
     connectToDb();
@@ -79,5 +80,8 @@ export const {
       return true;
     },
     ...authConfig.callbacks,
+
   },
 });
+
+
